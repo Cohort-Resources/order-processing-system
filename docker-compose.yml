@@ -1,0 +1,22 @@
+services:
+#  order-service:
+#    image: order-service:0.0.1-SNAPSHOT
+#    environment:
+#      DATABASE_HOST: postgres_db
+#      SPRING_PROFILES_ACTIVE: docker
+#    networks:
+#      - postgres
+  postgres:
+    image: postgres:latest
+    hostname: postgres_db
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - postgres
+
+
+networks:
+  postgres:
+    driver: bridge
