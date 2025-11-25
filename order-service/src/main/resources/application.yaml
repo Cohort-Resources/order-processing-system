@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    password: ${DATABASE_PASSWORD:password}
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:order-service}
+    username: ${DATABASE_USER:default}
+  profiles:
+    active: dev
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: false
