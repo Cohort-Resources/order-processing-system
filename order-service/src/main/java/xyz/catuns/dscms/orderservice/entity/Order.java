@@ -50,7 +50,7 @@ public class Order {
     private Instant updatedAt;
 
     @OneToMany(mappedBy = "order", cascade = {CascadeType.ALL})
-    private final List<OrderLine> orderLines = new ArrayList<>();
+    private List<OrderLine> orderLines = new ArrayList<>();
 
     @Transient
     private CustomerDto customer;
