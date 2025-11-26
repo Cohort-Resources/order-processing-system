@@ -27,7 +27,7 @@ public class DevOrderService implements OrderService {
     }
 
     @Override
-    public OrderResponse getOrders(Long orderId) {
+    public OrderResponse getOrder(Long orderId) {
         return new OrderResponse(
                 1L,
                 501L,

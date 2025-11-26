@@ -18,6 +18,7 @@ import xyz.catuns.dscms.orderservice.entity.Order;
 import xyz.catuns.dscms.orderservice.entity.OrderStatus;
 import xyz.catuns.dscms.orderservice.events.OrderEventProducer;
 import xyz.catuns.dscms.orderservice.exception.CustomerNotFoundException;
+import xyz.catuns.dscms.orderservice.exception.NotFoundException;
 import xyz.catuns.dscms.orderservice.exception.ProductNotFoundException;
 import xyz.catuns.dscms.orderservice.mapper.OrderMapper;
 import xyz.catuns.dscms.orderservice.repository.OrderRepository;
@@ -79,13 +80,17 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderResponse getOrders(Long orderId) {
-        return null;
+    public OrderResponse getOrder(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new NotFoundException("Order not found with id " + orderId));
+        return orderMapper.toResponse(order);
     }
 
     @Override
     public Page<OrderResponse> getAllOrders(Pageable pageable, Long customerId, OrderStatus status) {
-        return null;
+        Page<Order> orderPage = orderRepository.findAllByIdAndStatus(customerId, status, pageable);
+
+        return orderMapper.toResponsePage(orderPage);
     }
 
     @Override

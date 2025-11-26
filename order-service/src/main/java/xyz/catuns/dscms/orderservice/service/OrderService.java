@@ -13,7 +13,7 @@ public interface OrderService {
 
     CreateOrderResponse createOrder(CreateOrderRequest request);
 
-    OrderResponse getOrders(Long orderId);
+    OrderResponse getOrder(Long orderId);
 
     Page<OrderResponse> getAllOrders(Pageable pageable, Long customerId, OrderStatus status);
 
