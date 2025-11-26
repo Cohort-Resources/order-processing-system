@@ -12,7 +12,6 @@ import xyz.catuns.dscms.orderservice.dto.UserDto;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -27,10 +26,10 @@ public class Order {
     private Long id;
 
     @Column(name = "customer_id")
-    private UUID customerId;
+    private Long customerId;
 
     @Column(name = "created_by_user")
-    private UUID createdByUser;
+    private Long createdByUser;
 
     @Column(name = "order_number", length = 64, unique = true)
     private String orderNumber;

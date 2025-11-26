@@ -9,9 +9,7 @@ import org.springframework.stereotype.Service;
 import xyz.catuns.dscms.orderservice.clients.CustomerServiceClient;
 import xyz.catuns.dscms.orderservice.clients.ProductServiceClient;
 import xyz.catuns.dscms.orderservice.dto.CustomerDto;
-import xyz.catuns.dscms.orderservice.dto.ProductDto;
 import xyz.catuns.dscms.orderservice.dto.requests.CreateOrderRequest;
-import xyz.catuns.dscms.orderservice.dto.requests.OrderLineRequest;
 import xyz.catuns.dscms.orderservice.dto.requests.UpdateOrderStatusRequest;
 import xyz.catuns.dscms.orderservice.dto.response.CreateOrderResponse;
 import xyz.catuns.dscms.orderservice.dto.response.OrderResponse;
@@ -22,7 +20,6 @@ import xyz.catuns.dscms.orderservice.events.OrderEventProducer;
 import xyz.catuns.dscms.orderservice.exception.CustomerNotFoundException;
 import xyz.catuns.dscms.orderservice.exception.ProductNotFoundException;
 import xyz.catuns.dscms.orderservice.mapper.OrderMapper;
-import xyz.catuns.dscms.orderservice.repository.OrderLineRepository;
 import xyz.catuns.dscms.orderservice.repository.OrderRepository;
 
 @Service
