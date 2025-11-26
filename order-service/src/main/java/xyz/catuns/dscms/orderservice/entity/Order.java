@@ -57,4 +57,20 @@ public class Order {
     @Transient
     private UserDto user;
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", customerId=" + customerId +
+                ", createdByUser=" + createdByUser +
+                ", orderNumber='" + orderNumber + '\'' +
+                ", status=" + status +
+                ", totalAmount=" + totalAmount +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+//                ", orderLines=" + orderLines.size() +
+//                ", customer=" + customer +
+//                ", user=" + user +
+                '}';
+    }
 }

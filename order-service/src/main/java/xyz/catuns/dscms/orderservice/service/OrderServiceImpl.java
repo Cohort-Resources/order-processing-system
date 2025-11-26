@@ -36,7 +36,6 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderMapper orderMapper;
 
-
     public CreateOrderResponse createOrder(CreateOrderRequest request) {
 
         // make request to user service

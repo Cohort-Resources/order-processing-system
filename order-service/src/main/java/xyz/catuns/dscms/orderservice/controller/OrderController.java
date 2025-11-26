@@ -2,6 +2,7 @@ package xyz.catuns.dscms.orderservice.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,10 +27,9 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-
     @PostMapping
     public ResponseEntity<CreateOrderResponse> createOrder(
-            @RequestBody CreateOrderRequest request,
+            @Valid @RequestBody CreateOrderRequest request,
             @RequestHeader String bearerToken
     ) {
         // todo: validate bearerToken
