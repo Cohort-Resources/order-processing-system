@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST:}:${DATABASE_PORT:5432}/${DATABASE_NAME:customer_service}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+  hikari:
+    datasource:
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      idle-timeout: 600000
+server:
+  port: 8080
+logging:
+  level:
+    root: warn
+    xyz:
+      catuns:
+        dscms:
+          customer: info

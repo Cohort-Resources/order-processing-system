@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+logging:
+  level:
+    root: debug
+    xyz:
+      catuns:
+        dscms:
+          customer: debug
