@@ -1,6 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://${DATABASE_HOST:}:${DATABASE_PORT:5432}/${DATABASE_NAME:customer_service}
   jpa:
     hibernate:
       ddl-auto: none
